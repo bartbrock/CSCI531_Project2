@@ -107,7 +107,7 @@ main (int argc, char *argv[])
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
+	printArray(arrayParamsLow.a, arrayParamsLow.high + 1);
 	printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
@@ -171,7 +171,7 @@ main (int argc, char *argv[])
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
+	printArray(arrayParamsLow.a, arrayParamsLow.high + 1);
 	printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
@@ -235,7 +235,7 @@ main (int argc, char *argv[])
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
+	printArray(arrayParamsLow.a, arrayParamsLow.high + 1);
 	printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
