@@ -251,7 +251,7 @@ main (int argc, char *argv[])
 
 
 	// print out time results for all trials
-	printf("TRIALS FOR THREADED EXECUTION");
+	printf("TRIALS FOR THREADED EXECUTION \n");
 	printf("TRIAL 1, 100 elements \n");
 	printf("Runtime in milliseconds : %f \n\n", (double)time_diff1 / 1000000);
 	printf("TRIAL 2, 1000 elements \n");
