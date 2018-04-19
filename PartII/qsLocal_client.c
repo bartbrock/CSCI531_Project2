@@ -74,41 +74,41 @@ main (int argc, char *argv[])
 	//printArray(arr, n);
 
 	// divide array into two
-	pivot = partition(arr, 0, n-1);
-	arrHighSize = n - pivot;
+	//pivot = partition(arr, 0, n-1);
+	//arrHighSize = n - pivot;
 
-	printf("\nPivot Vaule = %d, Low Array Size = %d, High Array Size = %d \n", arr[pivot], pivot, arrHighSize);
+	//printf("\nPivot Vaule = %d, Low Array Size = %d, High Array Size = %d \n", arr[pivot], pivot, arrHighSize);
 
 	// create sub arrays
-	extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
-	extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
+	//extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
+	//extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
 	//printf("\npre-sorted arrayParamsLow: \n");
 	//printArray(arrayParamsLow.a, pivot);
 	//printf("pre-sorted arrayParamsHigh: \n");
 	//printArray(arrayParamsHigh.a, arrHighSize);
 
         //send upper portion to thread
-	if (pthread_create(&(tid[1]), NULL, &quickSortThread,(void *)&arrayParamsHigh))
-                  printf("\ncan't create thread :[%s] \n", strerror(err));
+	//if (pthread_create(&(tid[1]), NULL, &quickSortThread,(void *)&arrayParamsHigh))
+                  //printf("\ncan't create thread :[%s] \n", strerror(err));
  
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
 	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
         //          printf("\ncan't create thread :[%s] \n", strerror(err));
 
        
 	// process upper portion
-	//quickSort(arrHigh, 0, arrHighSize-1);
+	quickSort(arr, 0, n-1);
 
 	//wait for thread to complete
 	//pthread_join(tid[0], NULL);
-	pthread_join(tid[1], NULL);
+	//pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
-	printArray(arrayParamsHigh.a, arrHighSize);
+	printArray(arr, n);
+	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
 	time(&e100);	
@@ -138,41 +138,41 @@ main (int argc, char *argv[])
 	//printArray(arr, n);
 
 	// divide array into two
-	pivot = partition(arr, 0, n - 1);
-	arrHighSize = n - pivot;
+	//pivot = partition(arr, 0, n - 1);
+	//arrHighSize = n - pivot;
 
-	printf("\npivotIndex = %d, pivotVaule= %d, n = %d arrHighSize = %d \n", pivot, arr[pivot], n, arrHighSize);
+	//printf("\npivotIndex = %d, pivotVaule= %d, n = %d arrHighSize = %d \n", pivot, arr[pivot], n, arrHighSize);
 
 	// create sub arrays
-	extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
-	extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
+	//extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
+	//extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
 	//printf("\npre-sorted arrayParamsLow: \n");
 	//printArray(arrayParamsLow.a, pivot);
 	//printf("pre-sorted arrayParamsHigh: \n");
 	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	//send upper portion to thread
-	if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
-		printf("\ncan't create thread :[%s] \n", strerror(err));
+	//if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
+		//printf("\ncan't create thread :[%s] \n", strerror(err));
 
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
 	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
 	//          printf("\ncan't create thread :[%s] \n", strerror(err));
 
 
 	// process upper portion
-	//quickSort(arrHigh, 0, arrHighSize-1);
+	quickSort(arr, 0, n-1);
 
 	//wait for thread to complete
 	//pthread_join(tid[0], NULL);
-	pthread_join(tid[1], NULL);
+	//pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
-	printArray(arrayParamsHigh.a, arrHighSize);
+	printArray(arr, n);
+	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
 	time(&e1000);
@@ -202,41 +202,41 @@ main (int argc, char *argv[])
 	//printArray(arr, n);
 
 	// divide array into two
-	pivot = partition(arr, 0, n - 1);
-	arrHighSize = n - pivot;
+	//pivot = partition(arr, 0, n - 1);
+	//arrHighSize = n - pivot;
 
-	printf("\npivotIndex = %d, pivotVaule= %d, n = %d arrHighSize = %d \n", pivot, arr[pivot], n, arrHighSize);
+	//printf("\npivotIndex = %d, pivotVaule= %d, n = %d arrHighSize = %d \n", pivot, arr[pivot], n, arrHighSize);
 
 	// create sub arrays
-	extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
-	extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
+	//extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
+	//extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
 	//printf("\npre-sorted arrayParamsLow: \n");
 	//printArray(arrayParamsLow.a, pivot);
 	//printf("pre-sorted arrayParamsHigh: \n");
 	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	//send upper portion to thread
-	if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
-		printf("\ncan't create thread :[%s] \n", strerror(err));
+	//if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
+		//printf("\ncan't create thread :[%s] \n", strerror(err));
 
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
 	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
 	//          printf("\ncan't create thread :[%s] \n", strerror(err));
 
 
 	// process upper portion
-	//quickSort(arrHigh, 0, arrHighSize-1);
+	quickSort(arr, 0, n-1);
 
 	//wait for thread to complete
 	//pthread_join(tid[0], NULL);
-	pthread_join(tid[1], NULL);
+	//pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
-	printArray(arrayParams.a, arrayParamsLow.high + 1);
-	printArray(arrayParamsHigh.a, arrHighSize);
+	printArray(arr, n);
+	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	// mark end time
 	time(&e5000);

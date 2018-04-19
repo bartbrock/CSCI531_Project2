@@ -93,17 +93,17 @@ main (int argc, char *argv[])
  
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
-	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
-        //          printf("\ncan't create thread :[%s] \n", strerror(err));
+	if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
+                  printf("\ncan't create thread :[%s] \n", strerror(err));
 
        
 	// process upper portion
 	//quickSort(arrHigh, 0, arrHighSize-1);
 
 	//wait for thread to complete
-	//pthread_join(tid[0], NULL);
+	pthread_join(tid[0], NULL);
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
@@ -157,17 +157,17 @@ main (int argc, char *argv[])
 
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
-	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
-	//          printf("\ncan't create thread :[%s] \n", strerror(err));
+	if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
+	          printf("\ncan't create thread :[%s] \n", strerror(err));
 
 
 	// process upper portion
 	//quickSort(arrHigh, 0, arrHighSize-1);
 
 	//wait for thread to complete
-	//pthread_join(tid[0], NULL);
+	pthread_join(tid[0], NULL);
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
@@ -221,17 +221,17 @@ main (int argc, char *argv[])
 
 	//send lower portion to remote
 	// call to rpc stub ++++++++++++
-	arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
+	//arrayParams = *(qsrpc_prog_1(host, &arrayParamsLow));
 
-	//if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
-	//          printf("\ncan't create thread :[%s] \n", strerror(err));
+	if (pthread_create(&(tid[0]), NULL, &quickSortThread,(void *)&arrayParamsLow))
+	          printf("\ncan't create thread :[%s] \n", strerror(err));
 
 
 	// process upper portion
 	//quickSort(arrHigh, 0, arrHighSize-1);
 
 	//wait for thread to complete
-	//pthread_join(tid[0], NULL);
+	pthread_join(tid[0], NULL);
 	pthread_join(tid[1], NULL);
 
 	printf("\nSorted Array\n");
