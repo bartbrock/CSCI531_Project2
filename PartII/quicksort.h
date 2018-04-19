@@ -1,3 +1,4 @@
+#pragma once
 /* QuickSort Multithreaded */
 #include<stdio.h>
 #include<string.h>
