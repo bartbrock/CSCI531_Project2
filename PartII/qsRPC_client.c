@@ -71,7 +71,7 @@ main (int argc, char *argv[])
 
 	// start quicksort process
 	//printf("\nOriginal array, size= %d \n", n);
-	printArray(arr, n);
+	//printArray(arr, n);
 
 	// divide array into two
 	pivot = partition(arr, 0, n-1);
@@ -134,8 +134,8 @@ main (int argc, char *argv[])
 	createRandomArray(n);
 
 	// start quicksort process
-	printf("\nOriginal array, size= %d \n", n);
-	printArray(arr, n);
+	//printf("\nOriginal array, size= %d \n", n);
+	//printArray(arr, n);
 
 	// divide array into two
 	pivot = partition(arr, 0, n - 1);
@@ -146,10 +146,10 @@ main (int argc, char *argv[])
 	// create sub arrays
 	extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
 	extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
-	printf("\npre-sorted arrayParamsLow: \n");
-	printArray(arrayParamsLow.a, pivot);
-	printf("pre-sorted arrayParamsHigh: \n");
-	printArray(arrayParamsHigh.a, arrHighSize);
+	//printf("\npre-sorted arrayParamsLow: \n");
+	//printArray(arrayParamsLow.a, pivot);
+	//printf("pre-sorted arrayParamsHigh: \n");
+	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	//send upper portion to thread
 	if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
@@ -180,7 +180,7 @@ main (int argc, char *argv[])
 	time_diff2 = end_time_value2 - start_time_value2;
 	//printf("\nStart time: %s\n", ctime(&s1000));
 	//printf("End time : %s\n", ctime(&e1000));
-	printf("Runtime in seconds : %f \n", difftime(e1000, s1000));
+	//printf("Runtime in seconds : %f \n", difftime(e1000, s1000));
 	printf("Runtime in nanoseconds : %llu \n", time_diff2);
 	// ---------------------------- End Run # 2 ---------------------------------
 	printf("\n--------------------- End Run # 2 -------------------- \n\n");
@@ -198,8 +198,8 @@ main (int argc, char *argv[])
 	createRandomArray(n);
 
 	// start quicksort process
-	printf("\nOriginal array, size= %d \n", n);
-	printArray(arr, n);
+	//printf("\nOriginal array, size= %d \n", n);
+	//printArray(arr, n);
 
 	// divide array into two
 	pivot = partition(arr, 0, n - 1);
@@ -210,10 +210,10 @@ main (int argc, char *argv[])
 	// create sub arrays
 	extractArrayStruct(&arrayParamsLow, arr, ZERO, pivot);
 	extractArrayStruct(&arrayParamsHigh, arr, pivot, arrHighSize);
-	printf("\npre-sorted arrayParamsLow: \n");
-	printArray(arrayParamsLow.a, pivot);
-	printf("pre-sorted arrayParamsHigh: \n");
-	printArray(arrayParamsHigh.a, arrHighSize);
+	//printf("\npre-sorted arrayParamsLow: \n");
+	//printArray(arrayParamsLow.a, pivot);
+	//printf("pre-sorted arrayParamsHigh: \n");
+	//printArray(arrayParamsHigh.a, arrHighSize);
 
 	//send upper portion to thread
 	if (pthread_create(&(tid[1]), NULL, &quickSortThread, (void *)&arrayParamsHigh))
@@ -244,18 +244,18 @@ main (int argc, char *argv[])
 	time_diff3 = end_time_value3 - start_time_value3;
 	//printf("\nStart time: %s\n", ctime(&s5000));
 	//printf("End time : %s\n", ctime(&e5000));
-	printf("Runtime in seconds : %f \n", difftime(e5000, s5000));
+	//printf("Runtime in seconds : %f \n", difftime(e5000, s5000));
 	printf("Runtime in nanoseconds : %llu \n", time_diff3);
 	// ---------------------------- End Run # 3 ---------------------------------
 	printf("\n--------------------- End Run # 3 -------------------- \n\n");
 
 
 	// print out time results for all trials
-	printf("Runtime for TRIAL 1, 100 elements: %f seconds \n", difftime(e100, s100));
+	printf("TRIAL 1, 100 elements \n");
 	printf("Runtime in nanoseconds : %llu \n\n", time_diff1);
-	printf("Runtime for TRIAL 2, 1000 elements: %f seconds \n", difftime(e1000, s1000));
+	printf("TRIAL 2, 1000 elements \n");
 	printf("Runtime in nanoseconds : %llu \n\n", time_diff2);
-	printf("Runtime for TRIAL 3, 5000 elements: %f seconds \n", difftime(e5000, s5000));
+	printf("TRIAL 3, 5000 elements \n");
 	printf("Runtime in nanoseconds : %llu \n\n", time_diff3);
 
 exit (0);

@@ -86,7 +86,7 @@ void quickSort(int arr[], int low, int high)
 void* quickSortThread(void *arg)
 {
 	numbers *aP = (numbers *)arg;
-	printf("Enter quickSortThread, aP.a[0]= %d \n", aP->a[0]);
+	//printf("Enter quickSortThread, aP.a[0]= %d \n", aP->a[0]);
 	int low = aP->low;
 	int high = aP->high;
 	int *arr = aP->a;
@@ -102,7 +102,7 @@ void* quickSortThread(void *arg)
 		quickSort(arr, low, pi - 1);
 		quickSort(arr, pi + 1, high);
 	}
-	printf("Exit quickSortThread \n");
+	//printf("Exit quickSortThread \n");
 	pthread_exit(NULL);
 }
 
@@ -113,7 +113,7 @@ void printArray(int arr[], int size)
 	int i;
 	for (i=0; i < size; i++)
 		printf("%d ", arr[i]);
-	printf("\n");
+	//printf("\n");
 }
 
 void extractArrayStruct(numbers *params, int arrOld[], int start, int size)
