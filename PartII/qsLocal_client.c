@@ -117,7 +117,7 @@ main (int argc, char *argv[])
 	//printf("\nStart time: %s\n", ctime(&s100));
 	//printf("End time : %s\n", ctime(&e100));
 	//printf("Runtime in seconds : %f \n", difftime(e100, s100));
-	printf("Runtime in nanoseconds : %llu \n", time_diff1);
+	printf("Runtime in milliseconds : %f \n", (double)time_diff1 / 1000000);
 	// ---------------------------- End Run # 1 ---------------------------------
 	printf("\n--------------------- End Run # 1 -------------------- \n\n");
 
@@ -181,7 +181,7 @@ main (int argc, char *argv[])
 	//printf("\nStart time: %s\n", ctime(&s1000));
 	//printf("End time : %s\n", ctime(&e1000));
 	//printf("Runtime in seconds : %f \n", difftime(e1000, s1000));
-	printf("Runtime in nanoseconds : %llu \n", time_diff2);
+	printf("Runtime in milliseconds : %f \n", (double)time_diff2 / 1000000);
 	// ---------------------------- End Run # 2 ---------------------------------
 	printf("\n--------------------- End Run # 2 -------------------- \n\n");
 	
@@ -245,18 +245,18 @@ main (int argc, char *argv[])
 	//printf("\nStart time: %s\n", ctime(&s5000));
 	//printf("End time : %s\n", ctime(&e5000));
 	//printf("Runtime in seconds : %f \n", difftime(e5000, s5000));
-	printf("Runtime in nanoseconds : %llu \n", time_diff3);
+	printf("Runtime in milliseconds : %f \n", (double)time_diff3 / 1000000);
 	// ---------------------------- End Run # 3 ---------------------------------
 	printf("\n--------------------- End Run # 3 -------------------- \n\n");
 
 
 	// print out time results for all trials
 	printf("TRIAL 1, 100 elements \n");
-	printf("Runtime in nanoseconds : %llu \n\n", time_diff1);
+	printf("Runtime in milliseconds : %f \n\n", (double)time_diff1 / 1000000);
 	printf("TRIAL 2, 1000 elements \n");
-	printf("Runtime in nanoseconds : %llu \n\n", time_diff2);
+	printf("Runtime in milliseconds : %f \n\n", (double)time_diff2 / 1000000);
 	printf("TRIAL 3, 5000 elements \n");
-	printf("Runtime in nanoseconds : %llu \n\n", time_diff3);
+	printf("Runtime in milliseconds : %f \n\n", (double)time_diff3 / 1000000);
 
 exit (0);
 }
